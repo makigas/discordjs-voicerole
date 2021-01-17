@@ -2,14 +2,43 @@
   "name": "discordjs-voicerole",
   "version": "1.0.0",
   "description": "Add or remove roles from an user whenever connects or disconnects from voice channels",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint **/*.ts",
-    "test": "mocha -r ts-node/register *.spec.ts",
-    "transpile": "tsc"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=12"
   },
-  "author": "",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "lint": "eslint *.ts",
+    "test": "mocha -r ts-node/register *.spec.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makigas/discordjs-voicerole"
+  },
+  "author": {
+    "name": "Dani Rodríguez",
+    "email": "dani@danirod.es",
+    "url": "https://danirod.es"
+  },
+  "homepage": "https://github.com/makigas/discordjs-voicerole#readme",
+  "bugs": {
+    "url": "https://github.com/makigas/discordjs-voicerole/issues"
+  },
+  "keywords": [
+    "discordjs",
+    "discord",
+    "discord-voice",
+    "discord-roles"
+  ],
   "license": "ISC",
+  "peerDependencies": {
+    "discord.js": "^12.0.0"
+  },
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.2.0",
@@ -25,8 +54,10 @@
     "eslint-plugin-prettier": "^3.3.1",
     "mocha": "^8.2.1",
     "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
     "sinon": "^9.2.3",
     "sinon-chai": "^3.5.0",
+    "standard-version": "^9.1.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }

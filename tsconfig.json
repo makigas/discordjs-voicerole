@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
+    "declaration": true,
     "module": "commonjs",
     "target": "es2015",
     "lib": ["es2015"],
-    "rootDir": "."
+    "outDir": "dist",
   },
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["dist", "node_modules", "**/*.spec.ts"]
 }
