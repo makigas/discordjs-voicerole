@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/makigas/discordjs-voicerole/compare/v1.0.1...v2.0.0) (2021-08-14)
+
+
+### Features
+
+* add support for Discord.js 13 ([#185](https://github.com/makigas/discordjs-voicerole/issues/185)) ([93328e3](https://github.com/makigas/discordjs-voicerole/commit/93328e30fa765dd959fc988b17aa25ec35d336e6))
+
 ### [1.0.1](https://github.com/makigas/discordjs-voicerole/compare/v1.0.0...v1.0.1) (2021-08-14)
 
 
