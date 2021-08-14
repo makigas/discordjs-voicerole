@@ -28,7 +28,7 @@ describe("VoiceRole", () => {
   });
 
   function voiceEvent(channelId?: Snowflake): VoiceState {
-    return { member: mockMember, channelID: channelId } as any;
+    return { member: mockMember, channelId: channelId } as any;
   }
 
   describe("when the user joins a channel", () => {
