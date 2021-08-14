@@ -7,7 +7,15 @@ voice channel is left.
 
 ## Requirements
 
-A JavaScript project already depending on Discord.js 12.
+A JavaScript project already depending on Discord.js 13.
+
+**Still trapped in Discord.js 12 and having a hard time upgrading?**
+👉 Stay using discordjs-voicerole 1.0.1, the last version supporting
+Discord.js 12. You can pin it in your package.json like this:
+
+    "discordjs-voicerole": "<2.0.0"
+
+Sorry for stating this, but consider upgrading your bot.
 
 ## How to use
 
