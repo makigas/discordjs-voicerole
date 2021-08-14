@@ -21,18 +21,18 @@ export default class VoiceRoleManager {
       /* TODO: Can this happen? */
       return;
     }
-    if (oldState.channelID) {
+    if (oldState.channelId) {
       /* This is the channel that the member has left. */
-      const roles = this.roles(oldState.channelID);
+      const roles = this.roles(oldState.channelId);
       roles.forEach((role) =>
         oldState.member.roles.remove(role).catch((e) => {
           console.error(`Could not delete member from role: ${e}`);
         })
       );
     }
-    if (newState.channelID) {
+    if (newState.channelId) {
       /* This is the channel that the member has joined. */
-      const roles = this.roles(newState.channelID);
+      const roles = this.roles(newState.channelId);
       roles.forEach((role) =>
         newState.member.roles.add(role).catch((e) => {
           console.error(`Could not add member to role: ${e}`);

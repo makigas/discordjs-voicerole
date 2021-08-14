@@ -18,9 +18,7 @@ const role: string = process.env.ROLE;
 const channel: string = process.env.CHANNEL;
 
 const client = new Client({
-  ws: {
-    intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_VOICE_STATES,
-  },
+  intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_VOICE_STATES,
 });
 
 const manager = new VoiceRoleManager({
