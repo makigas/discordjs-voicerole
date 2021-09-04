@@ -90,6 +90,17 @@ describe("VoiceRole", () => {
       });
     });
 
+    describe("when the user mutes or unmutes", () => {
+      it("will not trigger a role change", () => {
+        // So user mute / deaf still causes an event to be triggered.
+        // The channel IDs are the same, though.
+        const voiceRole = new VoiceRoleManager(configObject);
+        voiceRole.trigger(voiceEvent("20001"), voiceEvent("20001"));
+        expect(mockMember.roles.remove).not.to.have.been.called;
+        expect(mockMember.roles.add).not.to.have.been.called;
+      });
+    });
+
     describe("when the origin channel is tracked", () => {
       it("removes a role if the destination channel is not tracked", () => {
         const voiceRole = new VoiceRoleManager(configObject);

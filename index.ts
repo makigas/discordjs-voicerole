@@ -21,6 +21,12 @@ export default class VoiceRoleManager {
       /* TODO: Can this happen? */
       return;
     }
+
+    if (oldState.channelId === newState.channelId) {
+      /* On mutes, the channelId doesn't actually change. */
+      return;
+    }
+
     if (oldState.channelId) {
       /* This is the channel that the member has left. */
       const roles = this.roles(oldState.channelId);

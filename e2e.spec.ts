@@ -30,7 +30,12 @@ client.on("ready", () => {
 });
 
 client.on("voiceStateUpdate", (old, cur) => {
-  manager.trigger(old, cur);
+  console.log({ old: old.channelId, cur: cur.channelId });
+  if (old.channelId === cur.channelId) {
+    console.log("old === cur");
+  } else {
+    manager.trigger(old, cur);
+  }
 });
 
 client.login(token);
