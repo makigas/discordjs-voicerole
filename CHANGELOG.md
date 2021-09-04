@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/makigas/discordjs-voicerole/compare/v2.0.1...v2.0.2) (2021-09-04)
+
+
+### Bug Fixes
+
+* do not trigger actions on mute/deafen ([9aea7a2](https://github.com/makigas/discordjs-voicerole/commit/9aea7a218efe7cb7e4418d401df48fea275c38ad))
+
 ### [2.0.1](https://github.com/makigas/discordjs-voicerole/compare/v2.0.0...v2.0.1) (2021-09-01)
 
 ## [2.0.0](https://github.com/makigas/discordjs-voicerole/compare/v1.0.1...v2.0.0) (2021-08-14)
