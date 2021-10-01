@@ -1,7 +1,8 @@
 .github/
+.env
 .eslintrc.js
 .gitignore
 *.ts
 !*.d.ts
 discordjs-voicerole-*.tgz
-tsconfig.json   
+tsconfig.json
