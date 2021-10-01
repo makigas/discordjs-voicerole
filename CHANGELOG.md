@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.3](https://github.com/makigas/discordjs-voicerole/compare/v2.0.2...v2.0.3) (2021-10-01)
+
+
+### Bug Fixes
+
+* **dist:** exclude .env when uploading to npm ([252606a](https://github.com/makigas/discordjs-voicerole/commit/252606a7dda9370c10133152c7bca8a546a19b4f))
+
 ### [2.0.2](https://github.com/makigas/discordjs-voicerole/compare/v2.0.1...v2.0.2) (2021-09-04)
 
 
