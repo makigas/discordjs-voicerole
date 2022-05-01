@@ -13,6 +13,7 @@ module.exports = {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
   },
+  ignorePatterns: ["examples/**/*"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2018,

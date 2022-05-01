@@ -1,0 +1,16 @@
+{
+  "name": "@makigas/discordjs-voicerole-module-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "discordjs-voicerole": "file:../.."
+  }
+}

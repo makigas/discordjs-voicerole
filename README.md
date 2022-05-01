@@ -19,30 +19,47 @@ Sorry for stating this, but consider upgrading your bot.
 
 ## How to use
 
-This library exposes a single class that depends on Discord.js. It
-tries to be agnostic of any other framework (such as Commando). This
-way, it should be easy to integrate into your existing bot system.
+Import the VoiceRoleManager to use it.
 
-The constructor expects to be passed an object with the definitions
-of the voice channels to monitor. Each key in the object is the
-ID of a VoiceChannel. Values assigned to each key are either the
-ID of a role, or an array of role IDs.
+If you are using Node.js and CommonJS. (You probably are if you don't
+know):
 
-The expectation is that, for each entry in the object, a member
-joining the voice channel whose ID acts as key will add them to
-all the roles whose IDs are provided as value. Leaving a voice
-channel will remove the previously added roles.
+```js
+const { VoiceRoleManager } = require("discordjs-voicerole");
+```
 
-For instance, the following example configures two voice channels,
-whose snowflake IDs are 40001 and 40002. The expectation is that
-joining the channel whose ID is 40001 will add the user to the
-roles 20001 and 20002. Leaving the channel will remove those
-roles.
+If you are using ES Modules or TypeScript, you can make use of import:
+
+```js
+import { VoiceRoleManager } from "discordjs-voicerole";
+```
+
+Build a VoiceRoleManager. You need to provide a configuration object.
+It is an object where keys are the snowflake of a voice channel.
+For each key, assign the string of the snowflake of a role to the
+array of snowflakes of roles.
+
+When the user joins a channel monitored by the VoiceRoleManager, they
+will receive all the roles pointed by their entry in the configuration,
+and when they leave the channel, they will have those roles removed.
+
+* To get the ID of a voice channel, right click the channel and use
+  "Copy ID". Make sure that Developer Mode is turned on in the Advanced
+  Settings.
+* To get the ID of a role, visit the server role settings, right click
+  the role, and use "Copy ID". Make sure that Developer Mode is turned
+  on in the Advanced Settings.
 
 ```js
 const manager = new VoiceChannelManager({
-  "40001": ["20001", "20002"]
+  "40001": ["20001", "20002"],
+  "50001": "30001",
 };
+
+// When the user joins the voice channel with ID 40001, the roles with
+// the ID 20001 and 20002 will be user, and removed when the channel
+// is left. When the user joins the voice channel with ID 50001, the
+// role with ID 30001 is assigned to the user and removed when left.
 ```
 
 To make the library work, simply handle the `voiceStateUpdate` event
@@ -60,7 +77,7 @@ client.on('voiceStateUpdate', (old, cur) => manager.trigger(old, cur));
 cool projects using this library.
 
 ```
-Copyright 2021 Dani Rodríguez
+Copyright 2021-2022 Dani Rodríguez
 
 Permission to use, copy, modify, and/or distribute this software for
 any purpose with or without fee is hereby granted, provided that the
