@@ -7,7 +7,7 @@
  */
 
 import { Client, Intents } from "discord.js";
-import { VoiceRoleManager } from "./index";
+import { VoiceChannelConfiguration, VoiceRoleManager } from "./index";
 
 if (!process.env.BOT_TOKEN || !process.env.ROLE || !process.env.CHANNEL) {
   console.error("Missing config");
@@ -21,9 +21,8 @@ const client = new Client({
   intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_VOICE_STATES,
 });
 
-const manager = new VoiceRoleManager({
-  [channel]: [role],
-});
+const config: VoiceChannelConfiguration = { [channel]: role };
+const manager = new VoiceRoleManager(config);
 
 client.on("ready", () => {
   console.log("Bot is online");

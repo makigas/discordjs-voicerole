@@ -1,10 +1,22 @@
 import { Snowflake, VoiceState } from "discord.js";
 
-/** You can either assign a role or a list of roles to each channel. */
-type VoiceChannelRoles = Snowflake | Snowflake[];
+/**
+ * The configuration object is a map (JavaScript object) where keys are
+ * the snowflakes of voice channels where you want the bot to kick in
+ * when someone connects or disconnects. The value assigned to each
+ * key are the role or roles to assign on connect, and to remove on
+ * disconnect.
+ */
+export type VoiceChannelConfiguration = Record<
+  Snowflake, // the snowflake of the voice channel to monitor
+  Snowflake | Snowflake[] // the snowflake or snowflake of roles to add
+>;
 
-type VoiceChannelConfiguration = Record<Snowflake, VoiceChannelRoles>;
-
+/**
+ * The voice role manager is the class that manages the role assignment
+ * and releasement whenever an user joins or leaves a voice channel
+ * that is managed by the config object.
+ */
 export class VoiceRoleManager {
   constructor(private config: VoiceChannelConfiguration) {}
 
