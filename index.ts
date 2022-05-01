@@ -5,7 +5,7 @@ type VoiceChannelRoles = Snowflake | Snowflake[];
 
 type VoiceChannelConfiguration = Record<Snowflake, VoiceChannelRoles>;
 
-export default class VoiceRoleManager {
+export class VoiceRoleManager {
   constructor(private config: VoiceChannelConfiguration) {}
 
   /**

@@ -5,7 +5,7 @@ import sinonChai from "sinon-chai";
 import "mocha";
 
 import { GuildMember, Snowflake, VoiceState } from "discord.js";
-import VoiceRoleManager from ".";
+import { VoiceRoleManager } from ".";
 
 chai.use(sinonChai);
 const expect = chai.expect;

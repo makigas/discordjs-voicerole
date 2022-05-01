@@ -7,7 +7,7 @@
  */
 
 import { Client, Intents } from "discord.js";
-import VoiceRoleManager from "./index";
+import { VoiceRoleManager } from "./index";
 
 if (!process.env.BOT_TOKEN || !process.env.ROLE || !process.env.CHANNEL) {
   console.error("Missing config");
