@@ -51,7 +51,7 @@ and when they leave the channel, they will have those roles removed.
   on in the Advanced Settings.
 
 ```js
-const manager = new VoiceChannelManager({
+const manager = new VoiceRoleManager({
   "40001": ["20001", "20002"],
   "50001": "30001",
 };
