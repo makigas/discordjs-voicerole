@@ -2,7 +2,10 @@
 .env
 .eslintrc.js
 .gitignore
+.node-version
 *.ts
 !*.d.ts
 discordjs-voicerole-*.tgz
+CHANGELOG.md
+examples
 tsconfig.json
