@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/makigas/discordjs-voicerole/compare/v2.0.3...v3.0.0) (2022-05-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* manager no longer a default export
+
+### Features
+
+* export VoiceChannelConfiguration type ([54661d1](https://github.com/makigas/discordjs-voicerole/commit/54661d1210a87805bf0a5e96164f6b2ae30998c8))
+
+
+* manager no longer a default export ([54659ca](https://github.com/makigas/discordjs-voicerole/commit/54659ca9192c6a9e04221f211d8a6770d812d9f7))
+
 ### [2.0.3](https://github.com/makigas/discordjs-voicerole/compare/v2.0.2...v2.0.3) (2021-10-01)
 
 
