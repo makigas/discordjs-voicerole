@@ -1,6 +1,6 @@
 {
   "name": "discordjs-voicerole",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Add or remove roles from an user whenever connects or disconnects from voice channels",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
