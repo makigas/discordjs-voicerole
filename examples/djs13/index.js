@@ -1,11 +1,11 @@
 /*
  * This is an integration example that shows how to use this package
- * in JavaScript when the project is making use of JavaScript modules
- * (so you import using "import from").
+ * in JavaScript when the project is making use of CommonJS system
+ * (so you import using "require").
  */
 
-import { Client, GatewayIntentBits, version } from "discord.js";
-import { VoiceRoleManager } from "discordjs-voicerole";
+const { Client, Intents, version } = require("discord.js");
+const { VoiceRoleManager } = require("discordjs-voicerole");
 
 // Make sure that all the three environment variables are declared.
 ["BOT_TOKEN", "ROLE", "CHANNEL"].forEach((env) => {
@@ -25,7 +25,7 @@ const manager = new VoiceRoleManager(config);
 
 // Create the client and connect it to the manager.
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates],
+  intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_VOICE_STATES,
 });
 
 // Main part!

@@ -1,5 +1,5 @@
 {
-  "name": "@makigas/discordjs-voicerole-commonjs-example",
+  "name": "@makigas/discordjs-voicerole-djs13-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.1.2",
+    "discord.js": "^13.9.2",
     "discordjs-voicerole": "file:../.."
   }
 }

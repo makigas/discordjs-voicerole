@@ -4,7 +4,7 @@
  * when building the package properly works.
  */
 
-import { Client, Intents } from "discord.js";
+import { Client, GatewayIntentBits, version } from "discord.js";
 import { VoiceRoleManager } from "discordjs-voicerole";
 
 // Make sure that all the three environment variables are declared.
@@ -20,12 +20,12 @@ import { VoiceRoleManager } from "discordjs-voicerole";
 // of a voice channel, and the values are an array of roles to assign
 // and unassign.
 const config = {};
-config[process.env.CHANNEL] = [process.env.ROLE];
+config[process.env.CHANNEL as string] = [process.env.ROLE];
 const manager = new VoiceRoleManager(config);
 
 // Create the client and connect it to the manager.
 const client = new Client({
-  intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_VOICE_STATES,
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates],
 });
 
 // Main part!
@@ -35,23 +35,25 @@ client.on("voiceStateUpdate", (old, cur) => {
 
   // Some debug to assert things in the terminal.
   console.log({
-    old: old.channel
-      ? {
-          channel: old.channel.id,
-          user: old.member.id,
-        }
-      : "<null>",
-    new: cur.channel
-      ? {
-          channel: cur.channel.id,
-          user: cur.member.id,
-        }
-      : "<null>",
+    old:
+      old.channel && old.member
+        ? {
+            channel: old.channel.id,
+            user: old.member.id,
+          }
+        : "<null>",
+    new:
+      cur.channel && cur.member
+        ? {
+            channel: cur.channel.id,
+            user: cur.member.id,
+          }
+        : "<null>",
   });
 });
 
 // Start the bot.
-client.on("ready", () => console.log("The bot is online"));
+client.on("ready", () => console.log("The bot is online using", version));
 client.login(process.env.BOT_TOKEN);
 
 // Stop the bot when the process is closed (via Ctrl-C).
