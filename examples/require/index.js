@@ -4,7 +4,7 @@
  * (so you import using "require").
  */
 
-const { Client, Intents } = require("discord.js");
+const { Client, GatewayIntentBits, version } = require("discord.js");
 const { VoiceRoleManager } = require("discordjs-voicerole");
 
 // Make sure that all the three environment variables are declared.
@@ -25,7 +25,7 @@ const manager = new VoiceRoleManager(config);
 
 // Create the client and connect it to the manager.
 const client = new Client({
-  intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_VOICE_STATES,
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates],
 });
 
 // Main part!
@@ -51,7 +51,7 @@ client.on("voiceStateUpdate", (old, cur) => {
 });
 
 // Start the bot.
-client.on("ready", () => console.log("The bot is online"));
+client.on("ready", () => console.log("The bot is online using", version));
 client.login(process.env.BOT_TOKEN);
 
 // Stop the bot when the process is closed (via Ctrl-C).
